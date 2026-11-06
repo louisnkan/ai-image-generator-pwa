@@ -1,5 +1,4 @@
-// sw.js
-const CACHE_NAME = 'ai-vision-v1';
+const CACHE_NAME = 'ai-vision-v2';
 const APP_SHELL = [
   './',
   './index.html',
@@ -29,10 +28,9 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(req.url);
 
-  // Only handle same-origin app files; generated images always go to the network
   if (url.origin !== self.location.origin) return;
+  if (url.pathname.startsWith('/api/')) return;
 
-  // Page navigations: network first, fall back to cached shell when offline
   if (req.mode === 'navigate') {
     event.respondWith(
       fetch(req).catch(() => caches.match('./index.html'))
@@ -40,7 +38,6 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Static UI files: cache first, update in the background
   event.respondWith(
     caches.match(req).then((cached) => {
       const network = fetch(req)
