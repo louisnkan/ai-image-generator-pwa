@@ -1,4 +1,3 @@
-<!-- index.html  (put icon.png, 512x512, in the same folder) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,70 +49,38 @@
         var(--bg);
     }
 
-    .app {
-      max-width: 520px;
-      margin: 0 auto;
-      padding: 0 20px 40px;
-    }
+    .app { max-width: 520px; margin: 0 auto; padding: 0 20px 40px; }
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 22px 0 18px;
-    }
-
+    header { display: flex; align-items: center; justify-content: space-between; padding: 22px 0 18px; }
     .brand { display: flex; align-items: center; gap: 12px; }
 
     .logo {
-      width: 34px;
-      height: 34px;
-      border-radius: 11px;
+      width: 34px; height: 34px; border-radius: 11px;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       box-shadow: 0 0 22px rgba(139, 92, 246, 0.45);
-      display: grid;
-      place-items: center;
+      display: grid; place-items: center;
     }
     .logo svg { width: 18px; height: 18px; }
 
-    h1 {
-      font-size: 19px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin: 0;
-    }
+    h1 { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; margin: 0; }
     h1 span {
       background: linear-gradient(90deg, #C4B5FD, #FDA4AF);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
     }
 
     .badge {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: var(--surface);
+      font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); border: 1px solid var(--border);
+      padding: 5px 10px; border-radius: 999px; background: var(--surface);
     }
 
     label {
-      display: block;
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin: 6px 0 10px;
+      display: block; font-size: 12px; font-weight: 500; color: var(--muted);
+      letter-spacing: 0.06em; text-transform: uppercase; margin: 6px 0 10px;
     }
 
     .field {
-      border-radius: 18px;
-      padding: 1px;
+      border-radius: 18px; padding: 1px;
       background: linear-gradient(145deg, rgba(255,255,255,0.09), rgba(255,255,255,0.02));
       transition: background 0.25s ease, box-shadow 0.25s ease;
     }
@@ -123,18 +90,9 @@
     }
 
     textarea {
-      display: block;
-      width: 100%;
-      min-height: 150px;
-      resize: none;
-      border: 0;
-      outline: 0;
-      border-radius: 17px;
-      padding: 16px 18px;
-      font: inherit;
-      font-size: 16px;
-      line-height: 1.55;
-      color: var(--text);
+      display: block; width: 100%; min-height: 150px; resize: none;
+      border: 0; outline: 0; border-radius: 17px; padding: 16px 18px;
+      font: inherit; font-size: 16px; line-height: 1.55; color: var(--text);
       background: var(--surface);
       box-shadow: inset 6px 6px 14px rgba(0,0,0,0.55), inset -3px -3px 10px rgba(255,255,255,0.025);
     }
@@ -147,18 +105,9 @@
     }
 
     #generateBtn {
-      position: relative;
-      width: 100%;
-      margin-top: 16px;
-      padding: 17px 20px;
-      border: 0;
-      border-radius: 16px;
-      font: inherit;
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      color: #fff;
-      cursor: pointer;
+      position: relative; width: 100%; margin-top: 16px; padding: 17px 20px;
+      border: 0; border-radius: 16px; font: inherit; font-size: 16px; font-weight: 600;
+      letter-spacing: 0.01em; color: #fff; cursor: pointer;
       background: linear-gradient(135deg, var(--accent) 0%, #C026D3 55%, var(--accent-2) 100%);
       box-shadow:
         0 10px 30px rgba(139, 92, 246, 0.35),
@@ -172,13 +121,8 @@
     .display-wrap { margin-top: 26px; }
 
     .display {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      border-radius: 22px;
-      overflow: hidden;
-      background: var(--surface);
-      border: 1px solid var(--border);
+      position: relative; width: 100%; aspect-ratio: 1 / 1; border-radius: 22px;
+      overflow: hidden; background: var(--surface); border: 1px solid var(--border);
       box-shadow:
         inset 8px 8px 18px rgba(0,0,0,0.5),
         inset -4px -4px 12px rgba(255,255,255,0.02),
@@ -186,28 +130,19 @@
     }
 
     .placeholder, .loader, .error {
-      position: absolute;
-      inset: 0;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      text-align: center;
-      padding: 24px;
+      position: absolute; inset: 0; display: none; flex-direction: column;
+      align-items: center; justify-content: center; gap: 14px; text-align: center; padding: 24px;
     }
     .display[data-state="idle"] .placeholder,
     .display[data-state="loading"] .loader,
     .display[data-state="error"] .error { display: flex; }
 
     .placeholder svg { width: 44px; height: 44px; opacity: 0.35; }
-    .placeholder p, .error p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.5; max-width: 240px; }
+    .placeholder p, .error p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.5; max-width: 260px; }
     .error p { color: #FDA4AF; }
 
     .spinner {
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
+      width: 54px; height: 54px; border-radius: 50%;
       background: conic-gradient(from 0deg, transparent 0 25%, var(--accent), var(--accent-2));
       -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 4px));
       mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 4px));
@@ -217,31 +152,18 @@
     @keyframes spin { to { transform: rotate(360deg); } }
 
     .loading-text {
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: var(--muted);
+      font-size: 13px; font-weight: 500; letter-spacing: 0.08em; color: var(--muted);
       animation: pulse 1.4s ease-in-out infinite;
     }
     @keyframes pulse { 50% { opacity: 0.4; } }
 
     #result {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 0.5s ease;
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: 0; transition: opacity 0.5s ease;
     }
     .display[data-state="done"] #result { opacity: 1; }
 
-    footer {
-      margin-top: 22px;
-      text-align: center;
-      font-size: 12px;
-      color: #46464F;
-    }
+    footer { margin-top: 22px; text-align: center; font-size: 12px; color: #46464F; }
   </style>
 </head>
 
@@ -306,9 +228,7 @@
       var errorMsg = document.getElementById('errorMsg');
       var requestId = 0;
 
-      function setState(state) {
-        display.setAttribute('data-state', state);
-      }
+      function setState(state) { display.setAttribute('data-state', state); }
 
       function finish() {
         btn.disabled = false;
@@ -333,7 +253,7 @@
         }
 
         var encodedPrompt = encodeURIComponent(text);
-        var url = 'https://gen.pollinations.ai/image/' + encodedPrompt + '?width=1024&height=1024&nologo=true';
+        var url = '/api/image?prompt=' + encodedPrompt + '&t=' + Date.now();
 
         var myId = ++requestId;
         btn.disabled = true;
@@ -348,7 +268,7 @@
         };
         img.onerror = function () {
           if (myId !== requestId) return;
-          errorMsg.textContent = 'The image could not be loaded. Check your connection and try again.';
+          errorMsg.textContent = 'The image could not be loaded. Please try again.';
           setState('error');
           finish();
         };
@@ -368,4 +288,4 @@
     })();
   </script>
 </body>
-  </html>
+</html>
